@@ -9,8 +9,8 @@ import {
 	Query,
 	Validation,
 } from "ngulf";
-import UserDto from "../dto/UserDto";
-import { AddZodUser, ZodUser } from "../dto/ZodDto";
+import UserDto from "@/dto/UserDto";
+import { AddZodUser, ZodUser } from "@/dto/ZodDto";
 
 @Controller("/test")
 export default class TestController {

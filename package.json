@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development nodemon",
     "start": "pm2 start ecosystem.config.cjs",
-    "stop": "pm2 stop ngule_init",
+    "stop": "pm2 stop ngulf-server",
+    "logs":"pm2 logs",
     "start:docker": "pm2-runtime ecosystem.config.cjs"
   },
   "author": "",

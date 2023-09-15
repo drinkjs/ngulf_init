@@ -1,9 +1,7 @@
-const pkg = require("./package.json");
-
 module.exports = {
 	apps: [
 		{
-			name: pkg.name,
+			name: "ngulf-server",
 			script: "./src/main.ts",
 			interpreter: "node",
 			interpreterArgs: "--loader ./es-loader.js",
