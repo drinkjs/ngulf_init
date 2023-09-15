@@ -6,7 +6,7 @@ module.exports = {
 			name: pkg.name,
 			script: "./src/main.ts",
 			interpreter: "node",
-			interpreterArgs: "--loader tsx",
+			interpreterArgs: "--loader ./es-loader.js",
 			exec_mode: "cluster",
 			watch: false,
 			env: {

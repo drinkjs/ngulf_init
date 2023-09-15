@@ -11,15 +11,9 @@ import {
 } from "ngulf";
 import UserDto from "../dto/UserDto";
 import { AddZodUser, ZodUser } from "../dto/ZodDto";
-import ProjectService from "../service/ProjectService";
-import UserService from "../service/UserService";
 
 @Controller("/test")
 export default class TestController {
-	constructor(
-		private readonly service: UserService,
-		private readonly projectService: ProjectService
-	) {}
 
 	@Get("/get")
 	async testGet(@Query("name") name: string) {
@@ -57,20 +51,6 @@ export default class TestController {
 	@Post("/validator")
 	async testValidator(@Body(new Validation({ groups: ["add"] })) dto: UserDto) {
 		return dto;
-	}
-
-	@Post("/orm")
-	async testORM(@Body(new Validation({ groups: ["add"] })) dto: UserDto) {
-		await this.service.add(dto.name, dto.age);
-		const user = await this.service.query(dto.name);
-		return user;
-	}
-
-	@Post("/mongo")
-	async testMongo(@Body() data: { name: string; type?: string }) {
-		await this.projectService.add(data.name, data.type);
-		const project = await this.projectService.find(data.name);
-		return project;
 	}
 
 	@Post("/zod")

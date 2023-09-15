@@ -1,22 +1,32 @@
 {
-  "compilerOptions": {
-    "module": "es2020",
-    "declaration": true,
-    "removeComments": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2020",
-    "inlineSourceMap": true,
-    "outDir": "dist",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "moduleResolution":"Node",
-    "esModuleInterop":true,
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": ["src"],
+	"compilerOptions": {
+		"module": "es2020",
+		"declaration": true,
+		"removeComments": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+		"target": "es2020",
+		"inlineSourceMap": true,
+		"outDir": "dist",
+		"incremental": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"include": ["src"],
+	"ts-node": {
+		"esm": true,
+		"files": true,
+		"experimentalSpecifierResolution": "node",
+		"require": ["tsconfig-paths/register"]
+	}
 }
