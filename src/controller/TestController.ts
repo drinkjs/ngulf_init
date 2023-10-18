@@ -7,6 +7,7 @@ import {
 	Post,
 	Put,
 	Query,
+	RouterContext,
 	Validation,
 } from "ngulf";
 import UserDto from "@/dto/UserDto";
@@ -14,9 +15,9 @@ import { AddZodUser, ZodUser } from "@/dto/ZodDto";
 
 @Controller("/test")
 export default class TestController {
-
 	@Get("/get")
-	async testGet(@Query("name") name: string) {
+	async testGet(@Query("name") name: string, ctx: RouterContext) {
+		ctx.res.header("Access-Control-Allow-Origin", "*");
 		return name;
 	}
 
